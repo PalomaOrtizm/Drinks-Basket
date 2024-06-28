@@ -3,7 +3,8 @@
 ### 1. Fuente de Datos
 Debido a los inconvenientos que se fueron presentados en cuanto a la conexion con la base de datos (al trabajar de manera remota los analistas no tenian acceso a la base de datos en SQL por cuestiones de espacio en el ordenador) se realizo una limpieza extra para poder crear las visualizaciones correctamente 
 - Conección del Power BI a la fuente de datos: con un script de python. [Limpieza+Script](https://github.com/PalomaOrtizm/Drinks-Basket/blob/main/Data%20Analysis/LimpiezaDataAnalysis.ipynb)
-- La coneccion se comprobo en 2 computadoras extrayendo la base de datos de SQL tambien. 
+- La coneccion se comprobo en 2 computadoras extrayendo la base de datos de SQL tambien.
+- Se adjuntan csv creados a partir del script [Acceso CSV](https://drive.google.com/drive/folders/1hhqxaTdul2z9jY-BFsLlhlr6dEB2Ovfm?usp=drive_link)
 
 ### 2. Tecnologías
 - **Power Bi**: Para crear el tablero interactivo.
