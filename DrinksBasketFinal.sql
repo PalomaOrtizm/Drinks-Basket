@@ -202,3 +202,94 @@ WHERE
     type = 'P' AND 
     DATEADD(DAY, number, @FechaInicio) <= @FechaFin;
 
+
+-- Creacion Vistas
+-- Vista de ventas con su respectiva fecha
+CREATE VIEW SaleDetailWithDate AS
+SELECT 
+    sd.DetailSalesID,
+    sd.IDSales,
+    s.SalesDate,
+    sd.Brand,
+    sd.Description,
+    sd.Size,
+    sd.SalesQuantity,
+    sd.SalesDollars,
+    sd.SalesPrice
+FROM 
+    dbo.SaleDetail sd
+JOIN 
+    dbo.Sale s ON sd.IDSales = s.IDSales;
+
+select * from SaleDetailWithDate;
+
+
+-- Vista de ventas detalladas por fecha 
+CREATE VIEW SalesByDate AS
+SELECT 
+    sd.DetailSalesID,
+    sd.IDSales,
+    s.SalesDate,
+    sd.Brand,
+    sd.Description,
+    sd.Size,
+    sd.SalesQuantity,
+    sd.SalesDollars,
+    sd.SalesPrice
+FROM 
+    dbo.SaleDetail sd
+JOIN 
+    dbo.Sale s ON sd.IDSales = s.IDSales;
+
+select * from SalesByDate
+
+
+--Vista de Inventario actual 
+CREATE VIEW CurrentInventory AS
+SELECT 
+    i.ProductoID,
+    i.Brand,
+    i.Store,
+    i.City,
+    i.Description,
+    i.Size,
+    i.onHand AS Quantity,
+    i.Price
+FROM 
+    dbo.Inventory i;
+
+select * from CurrentInventory
+
+
+--VIsta de Compras por Proveedor
+CREATE VIEW PurchasesBySupplier AS
+SELECT 
+    p.IDPurchases,
+    p.ReceivingDate,
+    p.Brand,
+    p.Quantity,
+    p.PurchasePrice,
+    p.Dollars
+FROM 
+    dbo.Purchases p
+JOIN 
+    dbo.InvoicePurchase ip ON p.IDPurchases = ip.IDPurchases;
+
+
+-- Vistas de ventas y compras por producto
+CREATE VIEW SalesAndPurchasesByProduct AS
+SELECT 
+    p.Brand,
+    p.Classification AS ProductName,
+    SUM(sd.SalesQuantity) AS TotalSalesQuantity,
+    SUM(sd.SalesDollars) AS TotalSalesAmount,
+    SUM(p.Quantity) AS TotalPurchasesQuantity,
+    SUM(p.Dollars) AS TotalPurchasesAmount
+FROM 
+    dbo.Purchases p
+LEFT JOIN 
+    dbo.SaleDetail sd ON p.Brand = sd.Brand 
+LEFT JOIN 
+    dbo.InvoicePurchase ip ON p.Brand = p.Brand AND p.Classification = p.Classification
+GROUP BY 
+    p.Brand, p.Classification;
