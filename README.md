@@ -62,6 +62,31 @@ Se llego al siguiente diagrama de Entidad/Relacion:
 ![Diagrama Relacional](https://github.com/AleVarela2010/Drinks-Basket/blob/main/images/Diagrama%20relacional.PNG)
 
 Toda la limpieza fue realizada en VSC con Python (pandas, numpy, SQL Alchemy) antes de cargar los datos en la nueva Base de datosen SQL.
+Resumen del Proceso de Creación de la Base de Datos
+Carga de Datos
+
+Se cargaron los datos desde archivos CSV en estructuras de datos pandas (DataFrames).
+Limpieza de Datos y Preparación
+
+Se eliminaron columnas no necesarias de los DataFrames basándose en el diagrama de entidad-relación.
+Se imprimieron advertencias para columnas no encontradas en los DataFrames originales.
+Añadir Columnas de Índice
+
+Se añadieron columnas de índice a los DataFrames para proporcionar identificadores únicos.
+Renombrar Columnas
+
+Se renombraron columnas específicas en los DataFrames para asegurar consistencia con el esquema de la base de datos.
+Eliminación de Duplicados y Nulos
+
+Se eliminaron filas duplicadas y valores nulos en cada DataFrame para garantizar la calidad de los datos.
+Guardar DataFrames Limpiados
+
+Se guardaron los DataFrames limpios en nuevos archivos CSV para su posterior uso en la base de datos.
+Carga en SQL Server
+
+Se configuró la conexión a SQL Server utilizando SQLAlchemy.
+Se eliminaron restricciones de clave externa en las tablas existentes para permitir la actualización de los datos.
+Se cargaron los archivos CSV limpios en las respectivas tablas de la base de datos SQL Server, reemplazando los datos existentes.
 
 ## Primeros insights / Analisis Exploratorio de Datos (EDA)
 
