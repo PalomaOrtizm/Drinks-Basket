@@ -108,8 +108,10 @@ ubicacion en una region con alta demanda. Las variaciones que vemos entre las ci
 
 Una vez realizada la limpieza con python se crearon las tablas y objetos para su importacion en SQL y asi crear el flujo que importe los datos a la nueva base de datos.
 
-![SQL Ejemplo](https://github.com/AleVarela2010/Drinks-Basket/blob/main/images/Tabla%20SQL.jpg)
+![SQL Conexión](https://github.com/PalomaOrtizm/Drinks-Basket/blob/main/images/image.png)
 
+
+**Nota:** por cuestiones de espacio en el repositorio de GIT tuvimos que crear uno nuevo ya que no hubo forma de cargar los archivos que quedaban. El antiguo [Repositorio](https://github.com/AleVarela2010/Drinks-Basket) esta anexado para poder ver el historial de commit de este proyecto.
 
 
 
