@@ -61,8 +61,9 @@ Se llego al siguiente diagrama de Entidad/Relacion:
 
 ![Diagrama Relacional](https://github.com/AleVarela2010/Drinks-Basket/blob/main/images/Diagrama%20relacional.PNG)
 
-Toda la limpieza fue realizada en VSC con Python (pandas, numpy, SQL Alchemy) antes de cargar los datos en la nueva Base de datosen SQL.
-Resumen del Proceso de Creación de la Base de Datos
+Toda la limpieza fue realizada en VSC con Python (pandas, numpy, SQL Alchemy) antes de cargar los datos en la nueva Base de datos en SQL.
+
+Resumen del Proceso de Creación de la Base de Datos:
 Carga de Datos
 
 Se cargaron los datos desde archivos CSV en estructuras de datos pandas (DataFrames).
